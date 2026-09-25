@@ -1,0 +1,1 @@
+{"$docs":"https://code.claude.com/docs/en/keybindings","$schema":"https://www.schemastore.org/claude-code-keybindings.json","bindings":[{"bindings":{"ctrl+shift+v":"chat:imagePaste"},"context":"Chat"}]}

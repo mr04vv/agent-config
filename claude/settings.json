@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "advisorModel": "fable",
+  "alwaysThinkingEnabled": false,
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "command": "/Applications/Utilities/Notifier.app/Contents/MacOS/Notifier --type banner --title \"許可待ち通知\" --message \"Claudeが許可を求めてるにゃ🐈️\" --messageaction \"/usr/bin/open /Applications/Ghostty.app\"",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "/usr/bin/afplay --volume 0.02 ~/.claude/cat-amae.mp3",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "if [ -f biome.json ] || [ -f biome.jsonc ]; then nr check:fix; fi",
+            "type": "command"
+          }
+        ],
+        "matcher": "Edit|MultiEdit|Write"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "~/.claude/scripts/deny-check.sh",
+            "type": "command"
+          }
+        ],
+        "matcher": "Bash"
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash ~/.claude/hooks/herdr-agent-state.sh session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      },
+      {
+        "hooks": [
+          {
+            "command": "node ~/.claude/ponytail/hooks/ponytail-activate.js",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": "startup|resume|clear|compact"
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "command": "node ~/.claude/ponytail/hooks/ponytail-subagent.js",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "node ~/.claude/ponytail/hooks/ponytail-mode-tracker.js",
+            "timeout": 5,
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "command": "/Applications/Utilities/Notifier.app/Contents/MacOS/Notifier --type banner --title \"完了通知\" --message \"Claudeのタスクが完了したにゃ🐈️\" --messageaction \"/usr/bin/open /Applications/Ghostty.app\"",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      },
+      {
+        "hooks": [
+          {
+            "command": "/usr/bin/afplay --volume 0.02 ~/.claude/cat.mp3",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(diff:*)",
+      "Bash(mkdir:*)",
+      "Bash(cat:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(docker compose:*)",
+      "Bash(docker compose exec:*)",
+      "Bash(docker compose logs:*)",
+      "Bash(pnpm remove*)",
+      "Bash(pnpm run build)",
+      "Bash(mkdir -p*)",
+      "Edit(**/src/**/*.ts)",
+      "Edit(**/src/**/*.tsx)",
+      "Edit(**/src/**/*.go)",
+      "Edit(**/src/**/*.rb)",
+      "Read(**/src/**/*.ts)",
+      "Read(**/src/**/*.tsx)",
+      "Read(**/*.md)",
+      "Read(**/src/**/*.go)",
+      "Read(**/src/**/*.rb)",
+      "Read(~/Works/**)",
+      "Edit(~/Works/**)",
+      "WebFetch",
+      "Bash(ni)",
+      "Edit(**/.claude/settings.json)",
+      "Edit(**/.claude/CLAUDE.md)",
+      "Read(**/.claude/CLAUDE.md)",
+      "Read(**/.claude/settings.json)",
+      "Bash(gh pr:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(tmux *)"
+    ],
+    "ask": [
+      "Bash(pnpm add:*)",
+      "Bash(yarn add:*)",
+      "Bash(npm i:*)",
+      "Bash(npm install:*)"
+    ],
+    "defaultMode": "auto",
+    "deny": [
+      "Bash(git push -f *)",
+      "Bash(git push --force *)",
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git config:*)",
+      "Bash(git reset:*)",
+      "Bash(chmod 777:*)",
+      "Bash(gh repo delete:*)",
+      "Read(.env.*)",
+      "Read(id_rsa)",
+      "Read(id_ed25519)",
+      "Edit(.env*)",
+      "Edit(**/secrets/**)",
+      "Bash(pnpm publish *)",
+      "Bash(nr publish *)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)"
+    ]
+  },
+  "statusLine": {
+    "command": "~/.claude/statusline.py",
+    "padding": 0,
+    "type": "command"
+  },
+  "theme": "custom:midnight",
+  "viewMode": "focus"
+}

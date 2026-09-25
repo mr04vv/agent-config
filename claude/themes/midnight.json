@@ -1,0 +1,7 @@
+{
+  "name": "Midnight",
+  "base": "dark",
+  "overrides": {
+    "userMessageBackground": "#5a3a1f"
+  }
+}

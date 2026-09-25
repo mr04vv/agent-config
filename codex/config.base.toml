@@ -1,0 +1,17 @@
+model = "gpt-5.6-sol"
+sandbox_mode = "danger-full-access"
+model_reasoning_effort = "low"
+
+[tui]
+# Put the current task in the terminal title so herdr (and the pane-navigator
+# plugin) can show what this pane is working on, the way Claude Code does.
+#
+# "summary" specifically: a static item such as "project" leaves the title
+# unchanged for a whole session, and herdr reads the title to detect activity --
+# with a fixed title a working pane keeps reporting idle.
+terminal_title = ["summary"]
+
+# Required by the herdr agent-state hook in hooks.json; `herdr integration
+# install codex` sets this itself, but install.sh regenerates config.toml from this file.
+[features]
+hooks = true
