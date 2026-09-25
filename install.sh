@@ -8,8 +8,8 @@ CODEX_DIR=${CODEX_HOME:-$HOME/.codex}
 BACKUP_DIR=$HOME/.agent-config-backup/$(date +%Y%m%d%H%M%S)
 
 # Shared skills that codex also gets; everything in skills/ goes to Claude.
-CODEX_SKILLS="diff-explain paper-details html documenting-with-sources writing-quotation
-  explain grilling quizzing tutoring herdr terminal-browser"
+CODEX_SKILLS="paper-details html documenting-with-sources writing-quotation explain
+  grilling herdr"
 
 # Backups go outside the config dirs: a leftover copy under skills/ would load
 # as a duplicate skill.

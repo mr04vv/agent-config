@@ -54,36 +54,19 @@ done
 （対象が "plan" → "plan, decision, or idea"、探索先が "codebase" → "environment"
 などに一般化）。ここでは v1.1.0 の文言を維持しているため、更新時は挙動の変化を確認すること。
 
-## yasunori0418/skills
-
-- Upstream: https://github.com/yasunori0418/skills
-- 取り込み元: 同上（`~/.claude/skills/` の実体をそのまま）。
-  取り込み時点で上流 main と本文は一致していた。
-
-| スキル | 上流パス |
-| --- | --- |
-| `quizzing` | `skills/learning/quizzing` |
-| `tutoring` | `skills/learning/tutoring` |
-
-2 つとも `disable-model-invocation: true`（明示呼び出し専用）。
-
-### 更新手順（mattpocock / yasunori0418 共通）
+### 更新手順（mattpocock）
 
 ```bash
 # リポジトリのルートで実行
 gh api "repos/mattpocock/skills/contents/skills/productivity/<skill>/SKILL.md" \
   -H "Accept: application/vnd.github.raw" > skills/<skill>/SKILL.md
-gh api "repos/yasunori0418/skills/contents/skills/learning/<skill>/SKILL.md" \
-  -H "Accept: application/vnd.github.raw" > skills/<skill>/SKILL.md
 ```
 
 上流のファイルには `metadata:` ブロックが無いので、差し替えたらこの表のピンを更新する。
 
-## ツール同梱のスキル（herdr / terminal-browser）
+## ツール同梱のスキル（herdr）
 
 - `skills/herdr/SKILL.md` — [herdr](https://github.com/herdrdev/herdr)（Apache-2.0） のパッケージ同梱ファイル
   （`share/herdr/skills/herdr/SKILL.md`）のコピー。
-- `skills/terminal-browser/SKILL.md` — [terminal-browser](https://github.com/zenbu-labs/terminal-browser)（MIT）のパッケージ同梱ファイル
-  （`share/terminal-browser/SKILL.md`）のコピー。
 
 ツールを更新したら、パッケージ内のファイルで差し替える。
