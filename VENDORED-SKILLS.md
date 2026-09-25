@@ -70,3 +70,16 @@ gh api "repos/mattpocock/skills/contents/skills/productivity/<skill>/SKILL.md" \
   （`share/herdr/skills/herdr/SKILL.md`）のコピー。
 
 ツールを更新したら、パッケージ内のファイルで差し替える。
+
+## humanlayer/skills
+
+- Upstream: https://github.com/humanlayer/skills
+- License: MIT (Copyright (c) 2026 HumanLayer)
+- 取り込み元: スキルインストーラで `~/.claude/skills/` に入っていたものをそのまま取り込んだ。
+  frontmatter の `metadata.github-tree-sha`（`0bdb821a21e793a4f6f82a7078c052154447e5cc`）が取り込み時点のピン。
+
+| スキル | 上流パス |
+| --- | --- |
+| `show-me` | `plugins/show-me/skills/show-me` |
+
+更新するときは `gh api "repos/humanlayer/skills/contents/plugins/show-me/skills/show-me/SKILL.md" -H "Accept: application/vnd.github.raw" > skills/show-me/SKILL.md`。
