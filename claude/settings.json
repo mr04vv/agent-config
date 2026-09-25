@@ -93,26 +93,6 @@
         ],
         "matcher": ""
       }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "command": "/Applications/Utilities/Notifier.app/Contents/MacOS/Notifier --type banner --title \"完了通知\" --message \"Claudeのタスクが完了したにゃ🐈️\" --messageaction \"/usr/bin/open /Applications/Ghostty.app\"",
-            "type": "command"
-          }
-        ],
-        "matcher": ""
-      },
-      {
-        "hooks": [
-          {
-            "command": "/usr/bin/afplay --volume 0.02 ~/.claude/cat.mp3",
-            "type": "command"
-          }
-        ],
-        "matcher": ""
-      }
     ]
   },
   "permissions": {
