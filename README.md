@@ -18,7 +18,7 @@ ghq get mr04vv/agent-config
 | --- | --- |
 | `claude/` | `~/.claude/`（ファイル単位で symlink。管理外のファイルには触れない） |
 | `skills/` | `~/.claude/skills/<name>`。一部は `~/.codex/skills/` にも（`install.sh` の `CODEX_SKILLS`） |
-| `ponytail/` | `~/.claude/ponytail`、skills と commands も展開（[UPSTREAM.md](ponytail/UPSTREAM.md)） |
+| `ponytail/` | `~/.claude/ponytail`（hooks）。commands も展開。skill 本体は `skills/ponytail*`（[UPSTREAM.md](ponytail/UPSTREAM.md)） |
 | `codex/` | `~/.codex/`。`config.toml` だけは `config.base.toml` から生成する |
 
 `codex/config.toml` を symlink にしないのは、codex が project の trust や hook の trust hash などの端末固有の状態を同じファイルに書き込むため。`install.sh` は base の内容で上書きし、base に無いキー・テーブルはそのまま残す。

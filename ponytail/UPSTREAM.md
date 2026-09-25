@@ -17,7 +17,7 @@ ruleset。YAGNI → stdlib → native → 既存依存 → ワンライナー �
 
 | 上流 | 取り込み先 | デプロイ先 | 役割 |
 | --- | --- | --- | --- |
-| `skills/*/SKILL.md` (6個) | `ponytail/skills/` | `~/.claude/skills/<name>/` | skill 本体。手動 skill 呼び出し用 |
+| `skills/*/SKILL.md` (6個) | `skills/ponytail*`（`ponytail/skills` は `../skills` への symlink） | `~/.claude/skills/<name>/` | skill 本体。手動 skill 呼び出し用。hooks は `../skills/ponytail/SKILL.md` を symlink 経由で読む |
 | `commands/*.toml` (6個) | `ponytail/commands/*.md` | `~/.claude/commands/*.md` | `/ponytail*` slash command |
 | `hooks/*.js` ほか | `ponytail/hooks/` | `~/.claude/ponytail/hooks/` | **主機能**。毎セッション ruleset を注入 |
 | `hooks/claude-codex-hooks.json` | `ponytail/hooks/` | 同上（参照用に保持） | 上流の hook 定義。配線は settings.json 側 |

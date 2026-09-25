@@ -37,11 +37,12 @@ link_files() { # <src dir> <dst dir>
 
 # --- Claude Code ---
 link_files "$ROOT/claude" "$CLAUDE_DIR"
-for d in "$ROOT"/skills/*/ "$ROOT"/ponytail/skills/*/; do
+for d in "$ROOT"/skills/*/; do
   link "${d%/}" "$CLAUDE_DIR/skills/$(basename "$d")"
 done
 link_files "$ROOT/ponytail/commands" "$CLAUDE_DIR/commands"
-# The hooks read ../skills/ponytail/SKILL.md, so the whole tree goes together.
+# The hooks read ../skills/ponytail/SKILL.md; ponytail/skills is a symlink to
+# ../skills, so that path resolves to skills/ponytail in this repo.
 link "$ROOT/ponytail" "$CLAUDE_DIR/ponytail"
 
 # --- Codex ---
