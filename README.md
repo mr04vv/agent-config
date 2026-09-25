@@ -25,7 +25,7 @@ ghq get mr04vv/agent-config
 
 ## 管理していないもの
 
-- `~/.claude/statusline.py` — 自己更新するため
+- `~/.claude/statusline.py` — 自己更新するため。新しい端末では [usedhonda/statusline](https://github.com/usedhonda/statusline) から `~/.claude/statusline.py` に置く
 - `settings.json` の hook が呼ぶ外部コマンド（`herdr`, `node`, macOS の `Notifier.app` / `afplay` など）
 
 外部から取り込んだスキルの出所とライセンスは [VENDORED-SKILLS.md](VENDORED-SKILLS.md) と `licenses/` を参照。
