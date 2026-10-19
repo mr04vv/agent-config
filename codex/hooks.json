@@ -9,6 +9,15 @@
             "type": "command"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
       }
     ],
     "Stop": [
@@ -18,6 +27,81 @@
             "command": "sh ~/.codex/codex-title.sh",
             "timeout": 60,
             "type": "command"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -r '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ] && [ -x '/Users/takutomori/.orca/agent-hooks/codex-hook.sh' ]; then /bin/sh '/Users/takutomori/.orca/agent-hooks/codex-hook.sh'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "timeout": 10
           }
         ]
       }
