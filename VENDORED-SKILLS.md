@@ -97,3 +97,17 @@ gh api "repos/mattpocock/skills/contents/skills/productivity/<skill>/SKILL.md" \
 
 `kit/render.mjs` の実行に `node` が必要。動画・PPTX 出力は追加の依存がある（`video/`, `pptx/README.md`）。
 Codex にはスキルのみ配備（commands は Claude のみ）。更新するときは上流の `plugins/visual-explainer/` で差し替え、上のコミットを更新する。
+
+## nanaism/yomiyasu
+
+- Upstream: https://github.com/nanaism/yomiyasu
+- License: MIT (Copyright (c) 2026 nanaism)。スキル同梱の `UNICODE-LICENSE.txt` はそのまま残している
+- 取り込み時点のコミット: `8be3ef6e0e668f14cae30c3da6b0c20b95b2179f` (2026-10-19, v2.1.0)
+
+| 取り込み先 | 上流パス |
+| --- | --- |
+| `skills/yomiyasu/` | `skills/yomiyasu/`（`.codex-plugin/` を除く） |
+
+スクリプトは Python 標準ライブラリのみで動く（`python3` が必要）。`yomiyasu_check.py` は検査記録（原文と最終稿の全文）を
+git ルートの `.yomiyasu/` に書く。任意のフック `scripts/yomiyasu_hook.py` は設定に登録していない。
+Codex にも配備する。更新するときは上流の `skills/yomiyasu/` で差し替え、上のコミットを更新する。
