@@ -83,3 +83,17 @@ gh api "repos/mattpocock/skills/contents/skills/productivity/<skill>/SKILL.md" \
 | `show-me` | `plugins/show-me/skills/show-me` |
 
 更新するときは `gh api "repos/humanlayer/skills/contents/plugins/show-me/skills/show-me/SKILL.md" -H "Accept: application/vnd.github.raw" > skills/show-me/SKILL.md`。
+
+## nicobailon/visual-explainer
+
+- Upstream: https://github.com/nicobailon/visual-explainer
+- License: MIT (Copyright (c) 2025 Nico Bailon)
+- 取り込み時点のコミット: `5f378868e0ea745a6284b51e710c390f0c76f72c` (2026-10-19, v0.14.0)
+
+| 取り込み先 | 上流パス |
+| --- | --- |
+| `skills/visual-explainer/` | `plugins/visual-explainer/`（`commands/`, `mcp/`, `extension.ts` を除く） |
+| `claude/commands/*.md`（9個） | `plugins/visual-explainer/commands/` |
+
+`kit/render.mjs` の実行に `node` が必要。動画・PPTX 出力は追加の依存がある（`video/`, `pptx/README.md`）。
+Codex にはスキルのみ配備（commands は Claude のみ）。更新するときは上流の `plugins/visual-explainer/` で差し替え、上のコミットを更新する。
