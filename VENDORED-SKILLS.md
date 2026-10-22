@@ -2,7 +2,7 @@
 
 `skills/` 以下には、外部リポジトリから取り込んだ（vendoring した）スキルが含まれる。
 このファイルはその出所と更新手順の記録。デプロイ対象外（`skills/` の外に置いてある）。
-上流のライセンス本文は `licenses/` に置いている（ponytail 含め MIT、herdr のみ Apache-2.0）。
+上流のライセンス本文は `licenses/` に置いている（ponytail 含め MIT、herdr のみ Apache-2.0。musoukun/skills はライセンス無し）。
 
 ## mathbullet/skills
 
@@ -111,3 +111,16 @@ Codex にはスキルのみ配備（commands は Claude のみ）。更新する
 スクリプトは Python 標準ライブラリのみで動く（`python3` が必要）。`yomiyasu_check.py` は検査記録（原文と最終稿の全文）を
 git ルートの `.yomiyasu/` に書く。任意のフック `scripts/yomiyasu_hook.py` は設定に登録していない。
 Codex にも配備する。更新するときは上流の `skills/yomiyasu/` で差し替え、上のコミットを更新する。
+
+## musoukun/skills
+
+- Upstream: https://github.com/musoukun/skills
+- License: **なし**（LICENSE ファイル・GitHub のライセンス設定ともに無い。再配布のリスクを承知のうえで取り込んでいる）
+- 取り込み時点のコミット: `7b1c4d514cb387cf160cd1ae1b6f8f62c3b92aa4` (2026-10-19)
+
+| 取り込み先 | 上流パス |
+| --- | --- |
+| `skills/animated-arch-diagram/` | `animated-arch-diagram/` |
+
+動画の書き出しに `node`・`ffmpeg`・Chrome（`playwright-core` はテンプレートの `package.json` で入れる）が必要。
+Claude のみに配備。更新するときは上流の `animated-arch-diagram/` で差し替え、上のコミットを更新する。
